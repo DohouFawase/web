@@ -1,0 +1,108 @@
+@extends('layouts.front')
+
+@section('title', '
+Services
+')
+@section('contente')
+<div class="header-bg absolute top-0 left-0 right-0 -z-50 w-full h-[1100px] bg-gradient-to-b from-primary-light-950/15 to-transparent max-h-[1100px] overflow-hidden"></div>
+
+     <!-- Category 1 Section 1 -->
+
+  <section class="relative py-20 lg:py-12">
+    <div class="container px-4">
+      <div class="flex flex-col gap-8 items-center justify-center text-center">
+        <!-- breadcrumb -->
+        <div class="hidden md:flex gap-2.5  justify-start items-center h-12 px-7 py-3.5 bg-neutral-0 dark:bg-neutral-dark-0 rounded-3xl border border-neutral-300 dark:border-neutral-dark-300">
+          <a class='text-neutral-700 dark:text-neutral-dark-700 text-base font-medium  leading-normal' href=' {{ route('home') }}'>Acceuil</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" class="fill-neutral-700 dark:fill-neutral-dark-700">
+            <path d="M1.52344 11.9961C1.24219 11.9961 0.992188 11.9023 0.804688 11.7148C0.398438 11.3398 0.398438 10.6836 0.804688 10.3086L5.08594 5.99609L0.804688 1.71484C0.398438 1.33984 0.398438 0.683594 0.804688 0.308594C1.17969 -0.0976562 1.83594 -0.0976562 2.21094 0.308594L7.21094 5.30859C7.61719 5.68359 7.61719 6.33984 7.21094 6.71484L2.21094 11.7148C2.02344 11.9023 1.77344 11.9961 1.52344 11.9961Z" />
+          </svg>
+          <a class='text-neutral-700 dark:text-neutral-dark-700 text-base font-medium leading-normal' href=' {{ route('service') }}'>Service</a>
+        </div>
+        <h1 class="heading-1 mb-0">
+         Nos  <span class="font-light">Services</span>
+        </h1>
+        <p class="text-base md:text-lg font-medium text-neutral-950 dark:text-neutral-dark-950 max-w-3xl">En tant que féticheur africain authentique, nous comprenons les défis uniques auxquels vous pouvez être confronté dans votre quête de réussite. Notre service  est conçu pour vous aider à surmonter les obstacles et à atteindre vos objectifs les plus ambitieux.</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- Category 1 Section 3 -->
+   <section class="relative pt-20 py-10 lg:pt-12 lg:pb-24">
+    <div class="container px-4">
+      <div class="flex flex-col gap-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-[65px]">
+        @if ($services->isEmpty())
+            <p class="flex justify-center font-bold text-xl">Veillez Patientez un peu<p>  
+            
+        @else
+        @foreach ($services as $service )
+        <div class="flex-col justify-start items-start gap-5 inline-flex hover-up">
+          <a class='rounded-3xl overflow-hidden max-h-[606px]' href='single'>
+            <img src="{{ asset('/storage/app/public/images/services/'.$service->image) }}" alt="" class="w-full" >
+
+
+            
+          </a>
+          <div class="flex-col justify-start items-start gap-3.5 flex">
+           
+            <h3><a class='text-neutral-950 dark:text-neutral-dark-950 text-2xl font-bold leading-snug item-link' href='#'>{{$service->title}}</a></h3>
+            <p><a class='text-neutral-950 dark:text-neutral-dark-950' href='#'>{{$service->description}}</a></p>
+          </div>
+          <div class="flex items-center justify-center gap-3 ">
+              <div class="">
+                <a href="
+                https://www.facebook.com/share/aak3M4Qq5SPDsADP/?mibextid=qi2Omg">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 256 256"><path fill="#1877f2" d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/><path fill="#fff" d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A128.959 128.959 0 0 0 128 256a128.9 128.9 0 0 0 20-1.555V165z"/></svg>
+                </a>
+              </div>
+              <div class="">
+                <a href="https://wa.me/22962770733">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="1.49em" height="1.5em" viewBox="0 0 256 258"><defs><linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%"><stop offset="0%" stop-color="#1faf38"/><stop offset="100%" stop-color="#60d669"/></linearGradient><linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%"><stop offset="0%" stop-color="#f9f9f9"/><stop offset="100%" stop-color="#fff"/></linearGradient></defs><path fill="url(#logosWhatsappIcon0)" d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a122.994 122.994 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/><path fill="url(#logosWhatsappIcon1)" d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/><path fill="#fff" d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561c0 15.67 11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716c-3.186-1.593-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/></svg>
+                </a>
+              </div>
+
+              <div class="">
+                {{-- <a href="m"></a> --}}
+                <a href="mailto:roidahfifonsi@gmail.com">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 32 32"><g fill="none"><rect width="27.813" height="19.938" x="2.094" y="6.031" fill="url(#f419id0)" rx="1.75"/><rect width="27.813" height="19.938" x="2.094" y="6.031" fill="url(#f419id1)" rx="1.75"/><path fill="url(#f419id2)" d="M16 6.031V25.97H3.844a1.75 1.75 0 0 1-1.75-1.75V7.78c0-.966.783-1.75 1.75-1.75z"/><path fill="url(#f419idj)" d="M16 6.031V25.97H3.844a1.75 1.75 0 0 1-1.75-1.75V7.78c0-.966.783-1.75 1.75-1.75z"/><path fill="url(#f419id3)" d="M16 6.031V25.97h12.156a1.75 1.75 0 0 0 1.75-1.75V7.78a1.75 1.75 0 0 0-1.75-1.75z"/><path fill="url(#f419id4)" d="M16 6.031V25.97h12.156a1.75 1.75 0 0 0 1.75-1.75V7.78a1.75 1.75 0 0 0-1.75-1.75z"/><path fill="url(#f419id5)" d="M16 6.031V25.97h12.156a1.75 1.75 0 0 0 1.75-1.75V7.78a1.75 1.75 0 0 0-1.75-1.75z"/><path fill="url(#f419id6)" d="M16 6.031V25.97h12.156a1.75 1.75 0 0 0 1.75-1.75V7.78a1.75 1.75 0 0 0-1.75-1.75z"/><g filter="url(#f419ide)"><path fill="url(#f419id7)" d="M2.094 24.219a.76.76 0 0 1 .358-.646l13.328-8.33a.4.4 0 0 1 .424 0l13.373 8.381c.205.128.33.353.33.595a1.75 1.75 0 0 1-1.75 1.75H3.843a1.75 1.75 0 0 1-1.75-1.75"/></g><path fill="url(#f419id8)" d="M2.094 24.219a.76.76 0 0 1 .358-.646l13.328-8.33a.4.4 0 0 1 .424 0l13.373 8.381c.205.128.33.353.33.595a1.75 1.75 0 0 1-1.75 1.75H3.843a1.75 1.75 0 0 1-1.75-1.75"/><path fill="url(#f419id9)" d="M2.094 24.219a.76.76 0 0 1 .358-.646l13.328-8.33a.4.4 0 0 1 .424 0l13.373 8.381c.205.128.33.353.33.595a1.75 1.75 0 0 1-1.75 1.75H3.843a1.75 1.75 0 0 1-1.75-1.75"/><g filter="url(#f419idf)"><path fill="url(#f419ida)" d="M2.094 7.781a.76.76 0 0 0 .358.646l13.328 8.33a.4.4 0 0 0 .424 0l13.373-8.381a.702.702 0 0 0 .33-.595a1.75 1.75 0 0 0-1.75-1.75H3.843a1.75 1.75 0 0 0-1.75 1.75"/><path fill="url(#f419idb)" d="M2.094 7.781a.76.76 0 0 0 .358.646l13.328 8.33a.4.4 0 0 0 .424 0l13.373-8.381a.702.702 0 0 0 .33-.595a1.75 1.75 0 0 0-1.75-1.75H3.843a1.75 1.75 0 0 0-1.75 1.75"/><path fill="url(#f419idc)" d="M2.094 7.781a.76.76 0 0 0 .358.646l13.328 8.33a.4.4 0 0 0 .424 0l13.373-8.381a.702.702 0 0 0 .33-.595a1.75 1.75 0 0 0-1.75-1.75H3.843a1.75 1.75 0 0 0-1.75 1.75"/><path fill="url(#f419idk)" d="M2.094 7.781a.76.76 0 0 0 .358.646l13.328 8.33a.4.4 0 0 0 .424 0l13.373-8.381a.702.702 0 0 0 .33-.595a1.75 1.75 0 0 0-1.75-1.75H3.843a1.75 1.75 0 0 0-1.75 1.75"/></g><g filter="url(#f419idg)"><path fill="#c2a5d0" d="M15.329 23.472a7 7 0 1 0 0-14a7 7 0 0 0 0 14"/></g><g filter="url(#f419idh)"><path fill="url(#f419idd)" d="M15.953 23a7 7 0 1 0 0-14a7 7 0 0 0 0 14"/></g><g filter="url(#f419idi)"><path fill="#e6e0ed" d="M15.953 11.5c-1.21-.02-2.36.44-3.22 1.3c-.87.85-1.34 1.99-1.34 3.2c0 2.48 2.02 4.5 4.5 4.5a.47.47 0 1 0 0-.94c-1.96 0-3.56-1.6-3.56-3.56c0-.96.38-1.86 1.06-2.53c.68-.67 1.59-1.03 2.55-1.03c1.93.03 3.51 1.65 3.51 3.62v.81a.67.67 0 0 1-1.34 0v-3.08a.47.47 0 0 0-.47-.47c-.26 0-.49.21-.49.47v.09c-.44-.35-.99-.57-1.6-.57c-1.4 0-2.54 1.14-2.54 2.54c0 1.4 1.14 2.54 2.54 2.54c.7 0 1.34-.29 1.8-.75c.28.5.81.84 1.42.84c.89 0 1.62-.73 1.62-1.62v-.81c0-2.47-1.99-4.52-4.44-4.55m-.39 5.96c-.88 0-1.6-.72-1.6-1.6c0-.88.72-1.6 1.6-1.6c.88 0 1.6.72 1.6 1.6c0 .88-.72 1.6-1.6 1.6"/></g><defs><linearGradient id="f419id0" x1="4.094" x2="29.906" y1="17.156" y2="16.969" gradientUnits="userSpaceOnUse"><stop stop-color="#dfd0e6"/><stop offset="1" stop-color="#eee5f8"/></linearGradient><linearGradient id="f419id1" x1="2.094" x2="5.132" y1="17.095" y2="17.095" gradientUnits="userSpaceOnUse"><stop stop-color="#d6babd"/><stop offset="1" stop-color="#dcc9dd" stop-opacity="0"/></linearGradient><linearGradient id="f419id2" x1="10.837" x2="10.075" y1="18.973" y2="17.786" gradientUnits="userSpaceOnUse"><stop offset=".114" stop-color="#dac3df"/><stop offset="1" stop-color="#dac3df" stop-opacity="0"/></linearGradient><linearGradient id="f419id3" x1="21.094" x2="21.924" y1="19.281" y2="17.786" gradientUnits="userSpaceOnUse"><stop offset=".114" stop-color="#f6effe"/><stop offset="1" stop-color="#f3eafd" stop-opacity="0"/></linearGradient><linearGradient id="f419id4" x1="20.156" x2="21.219" y1="13.938" y2="15.375" gradientUnits="userSpaceOnUse"><stop stop-color="#e3cdf7"/><stop offset="1" stop-color="#e9d9f8" stop-opacity="0"/></linearGradient><linearGradient id="f419id5" x1="30.094" x2="26.375" y1="19.563" y2="19.563" gradientUnits="userSpaceOnUse"><stop stop-color="#f7f3fb"/><stop offset="1" stop-color="#f0e9f8" stop-opacity="0"/></linearGradient><linearGradient id="f419id6" x1="30.094" x2="28.868" y1="19.563" y2="19.563" gradientUnits="userSpaceOnUse"><stop offset=".199" stop-color="#ebe9ed"/><stop offset="1" stop-color="#ebe9ed" stop-opacity="0"/></linearGradient><linearGradient id="f419id7" x1="16" x2="16" y1="27.719" y2="16.906" gradientUnits="userSpaceOnUse"><stop stop-color="#ddc5f1"/><stop offset="1" stop-color="#e6daf1"/></linearGradient><linearGradient id="f419id8" x1="7.486" x2="7.942" y1="20.106" y2="20.791" gradientUnits="userSpaceOnUse"><stop offset=".073" stop-color="#ddc2c8"/><stop offset="1" stop-color="#dfcdda" stop-opacity="0"/></linearGradient><linearGradient id="f419id9" x1="22.581" x2="22.294" y1="19.159" y2="19.606" gradientUnits="userSpaceOnUse"><stop offset=".14" stop-color="#f8f3fd"/><stop offset="1" stop-color="#f1eaf9" stop-opacity="0"/></linearGradient><linearGradient id="f419ida" x1="16" x2="16" y1="6.031" y2="16.819" gradientUnits="userSpaceOnUse"><stop stop-color="#e9e4e9"/><stop offset="1" stop-color="#e7dcf0"/></linearGradient><linearGradient id="f419idb" x1="9.81" x2="13.424" y1="12.878" y2="6.393" gradientUnits="userSpaceOnUse"><stop stop-color="#e1d5e7"/><stop offset="1" stop-color="#e1d5e7" stop-opacity="0"/></linearGradient><linearGradient id="f419idc" x1="2.094" x2="5.026" y1="7.669" y2="7.669" gradientUnits="userSpaceOnUse"><stop stop-color="#e1c1bc"/><stop offset="1" stop-color="#e1c1bc" stop-opacity="0"/><stop offset="1" stop-color="#e9d1cd" stop-opacity="0"/></linearGradient><linearGradient id="f419idd" x1="22.438" x2="10.688" y1="14.281" y2="18.594" gradientUnits="userSpaceOnUse"><stop stop-color="#347bd7"/><stop offset="1" stop-color="#3477cb"/></linearGradient><filter id="f419ide" width="27.813" height="11.538" x="2.094" y="14.431" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="-.75"/><feGaussianBlur stdDeviation=".75"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.819608 0 0 0 0 0.654902 0 0 0 0 0.933333 0 0 0 1 0"/><feBlend in2="shape" result="effect1_innerShadow_18_21780"/></filter><filter id="f419idf" width="27.813" height="11.188" x="2.094" y="5.881" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="-.15"/><feGaussianBlur stdDeviation=".225"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.827451 0 0 0 0 0.686275 0 0 0 0 0.913725 0 0 0 1 0"/><feBlend in2="shape" result="effect1_innerShadow_18_21780"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy=".25"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.870588 0 0 0 0 0.858824 0 0 0 0 0.854902 0 0 0 1 0"/><feBlend in2="effect1_innerShadow_18_21780" result="effect2_innerShadow_18_21780"/></filter><filter id="f419idg" width="17" height="17" x="6.829" y="7.972" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_18_21780" stdDeviation=".75"/></filter><filter id="f419idh" width="14.4" height="14.5" x="8.803" y="8.75" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".25"/><feGaussianBlur stdDeviation=".125"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.192157 0 0 0 0 0.376471 0 0 0 0 0.721569 0 0 0 1 0"/><feBlend in2="shape" result="effect1_innerShadow_18_21780"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="-.25"/><feGaussianBlur stdDeviation=".125"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.32549 0 0 0 0 0.341176 0 0 0 0 0.819608 0 0 0 1 0"/><feBlend in2="effect1_innerShadow_18_21780" result="effect2_innerShadow_18_21780"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.15" dy=".25"/><feGaussianBlur stdDeviation=".125"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.317647 0 0 0 0 0.596078 0 0 0 0 0.882353 0 0 0 1 0"/><feBlend in2="effect2_innerShadow_18_21780" result="effect3_innerShadow_18_21780"/></filter><filter id="f419idi" width="9.5" height="9.651" x="10.993" y="11.249" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.15" dy=".15"/><feGaussianBlur stdDeviation=".125"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0.152941 0 0 0 0 0.341176 0 0 0 0 0.768627 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_18_21780"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_18_21780" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="-.25"/><feGaussianBlur stdDeviation=".2"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.803922 0 0 0 0 0.713726 0 0 0 0 0.921569 0 0 0 1 0"/><feBlend in2="shape" result="effect2_innerShadow_18_21780"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.15" dy=".15"/><feGaussianBlur stdDeviation=".15"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.917647 0 0 0 0 0.890196 0 0 0 0 0.952941 0 0 0 1 0"/><feBlend in2="effect2_innerShadow_18_21780" result="effect3_innerShadow_18_21780"/></filter><radialGradient id="f419idj" cx="0" cy="0" r="1" gradientTransform="rotate(123.69 2.481 9.934)scale(2.72523 19.1395)" gradientUnits="userSpaceOnUse"><stop offset=".342" stop-color="#c8a6d7"/><stop offset="1" stop-color="#d1bbdd" stop-opacity="0"/></radialGradient><radialGradient id="f419idk" cx="0" cy="0" r="1" gradientTransform="rotate(-138.233 15.658 -.181)scale(6.12906 27.1579)" gradientUnits="userSpaceOnUse"><stop stop-color="#fbf9fe"/><stop offset="1" stop-color="#f0ecf1" stop-opacity="0"/></radialGradient></defs></g></svg>
+                </a>
+              </div>
+
+
+              
+          </div>
+        </div>
+        @endforeach  
+        @endif
+      
+  
+      </div>
+        
+        
+        {{-- <div class="relative">
+          <!-- pagination -->
+          <div class="flex items-center justify-start">
+            <nav class="flex items-center gap-2" aria-label="Pagination">
+              <a href="category-4#" class="text-neutral-950 rounded-full w-12 h-12 bg-primary-light-200 hover:bg-primary-light-300 dark:bg-primary-dark-200 dark:hover:bg-primary-dark-300 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15" class="fill-neutral-950 dark:fill-neutral-dark-950">
+                  <path d="M17.4922 7.49023C17.4922 8.19336 16.9453 8.74023 16.2812 8.74023H4.28906L8.39062 12.8809C8.89844 13.3496 8.89844 14.1699 8.39062 14.6387C8.15625 14.873 7.84375 14.9902 7.53125 14.9902C7.17969 14.9902 6.86719 14.873 6.63281 14.6387L0.382812 8.38867C-0.125 7.91992 -0.125 7.09961 0.382812 6.63086L6.63281 0.380859C7.10156 -0.126953 7.92188 -0.126953 8.39062 0.380859C8.89844 0.849609 8.89844 1.66992 8.39062 2.13867L4.28906 6.24023H16.2812C16.9453 6.24023 17.4922 6.82617 17.4922 7.49023Z" />
+                </svg>
+              </a>
+              <a href="category-4#" class="active text-xl font-bold text-neutral-950 bg-primary-light-950 dark:text-neutral-dark-950 dark:bg-primary-dark-950 rounded-full w-12 h-12 flex items-center justify-center">1</a>
+              <a href="category-4#" class="text-xl font-bold text-neutral-950 rounded-full bg-primary-light-200 hover:bg-primary-light-300 dark:text-neutral-dark-950 dark:bg-primary-dark-200 dark:hover:bg-primary-dark-300 w-12 h-12 flex items-center justify-center">2</a>
+              <a href="category-4#" class="text-xl font-bold text-neutral-950 rounded-full bg-primary-light-200 hover:bg-primary-light-300 dark:text-neutral-dark-950 dark:bg-primary-dark-200 dark:hover:bg-primary-dark-300 w-12 h-12 flex items-center justify-center">3</a>
+              <a href="category-4#" class="text-xl font-bold text-neutral-950 rounded-full bg-primary-light-200 hover:bg-primary-light-300 dark:text-neutral-dark-950 dark:bg-primary-dark-200 dark:hover:bg-primary-dark-300 w-12 h-12 flex items-center justify-center">4</a>
+              <a href="category-4#" class="text-neutral-950 rounded-full w-12 h-12 bg-primary-light-200 hover:bg-primary-light-300 dark:bg-primary-dark-200 dark:hover:bg-primary-dark-300  flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15" class="fill-neutral-950 dark:fill-neutral-dark-950">
+                  <path d="M0 7.49023C0 8.19336 0.546875 8.74023 1.21094 8.74023H13.2031L9.10156 12.8809C8.59375 13.3496 8.59375 14.1699 9.10156 14.6387C9.33594 14.873 9.64844 14.9902 9.96094 14.9902C10.3125 14.9902 10.625 14.873 10.8594 14.6387L17.1094 8.38867C17.6172 7.91992 17.6172 7.09961 17.1094 6.63086L10.8594 0.380859C10.3906 -0.126953 9.57031 -0.126953 9.10156 0.380859C8.59375 0.849609 8.59375 1.66992 9.10156 2.13867L13.2031 6.24023H1.21094C0.546875 6.24023 0 6.82617 0 7.49023Z" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div> --}}
+      </div>
+    </div>
+  </section>
+@endsection
